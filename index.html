@@ -1,105 +1,256 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historiske Timer – Foredrag der vækker minder</title>
-    <meta name="description" content="Historiske Timer leverer levende foredrag baseret på reminiscens-terapi til plejehjem, aktivitetscentre og kirker i hele Danmark.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Georgia, 'Times New Roman', serif; color: #2c2c2c; background: #faf9f6; line-height: 1.7; }
-        header { background: #1a2a3a; color: #faf9f6; padding: 3rem 1.5rem; text-align: center; }
-        header h1 { font-size: 2.4rem; font-weight: 400; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
-        header p { font-size: 1.15rem; font-style: italic; opacity: 0.85; }
-        main { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
-        section { margin-bottom: 3rem; }
-        h2 { font-size: 1.4rem; font-weight: 400; color: #1a2a3a; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid #d4c9b8; }
-        p { margin-bottom: 1rem; font-size: 1.05rem; }
-        .tilbud { background: #fff; border: 1px solid #d4c9b8; border-radius: 6px; padding: 2rem; margin-bottom: 1.5rem; }
-        .tilbud h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; color: #1a2a3a; }
-        .tilbud .pris { font-size: 1.3rem; color: #6b4c2a; font-weight: 600; margin: 0.8rem 0; }
-        .tilbud ul { list-style: none; padding: 0; }
-        .tilbud ul li { padding: 0.3rem 0; padding-left: 1.2rem; position: relative; }
-        .tilbud ul li::before { content: "–"; position: absolute; left: 0; color: #6b4c2a; }
-        .tal { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
-        .tal-item { flex: 1; min-width: 140px; text-align: center; padding: 1.2rem; background: #fff; border: 1px solid #d4c9b8; border-radius: 6px; }
-        .tal-item .nummer { font-size: 2rem; font-weight: 600; color: #6b4c2a; display: block; }
-        .tal-item .label { font-size: 0.9rem; color: #666; margin-top: 0.3rem; display: block; }
-        .cta { background: #1a2a3a; color: #faf9f6; padding: 2.5rem; border-radius: 6px; text-align: center; }
-        .cta h2 { color: #faf9f6; border: none; font-size: 1.5rem; margin-bottom: 0.8rem; }
-        .cta p { opacity: 0.9; margin-bottom: 1.5rem; }
-        .cta a { display: inline-block; background: #faf9f6; color: #1a2a3a; text-decoration: none; padding: 0.8rem 2rem; border-radius: 4px; font-size: 1.05rem; font-family: Georgia, serif; margin: 0.3rem; }
-        .cta a:hover { background: #e8e4dc; }
-        footer { text-align: center; padding: 2rem 1.5rem; font-size: 0.9rem; color: #888; border-top: 1px solid #e0dbd3; }
-        footer a { color: #6b4c2a; text-decoration: none; }
-        @media (max-width: 600px) { header h1 { font-size: 1.8rem; } header { padding: 2rem 1rem; } main { padding: 2rem 1rem; } .tal { flex-direction: column; } .cta a { display: block; margin: 0.5rem 0; } }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historiske Timer – Foredrag der vækker minder</title>
+  <meta name="description" content="Historiske Timer leverer levende foredrag om dansk historie til plejehjem, aktivitetscentre og kirker i hele Danmark.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2332;
+      --warm: #f5f0e8;
+      --cream: #faf8f4;
+      --text: #2c2c2c;
+      --muted: #6b6b6b;
+      --border: #ddd5c9;
+      --accent: #1a2332;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .logo-img {
+      width: 120px;
+      margin-bottom: 1rem;
+      filter: invert(1);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: 300;
+      opacity: 0.75;
+      letter-spacing: 0.03em;
+    }
+
+    section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .foredrag-item { border-bottom: 1px solid var(--border); }
+    .foredrag-item:first-child { border-top: 1px solid var(--border); }
+
+    .foredrag-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0.5rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+    }
+
+    .foredrag-header:hover { background: rgba(0,0,0,0.02); }
+
+    .foredrag-header h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .foredrag-toggle {
+      font-size: 1.4rem;
+      color: var(--muted);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      line-height: 1;
+    }
+
+    .foredrag-item.open .foredrag-toggle { transform: rotate(45deg); }
+    .foredrag-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .foredrag-item.open .foredrag-body { max-height: 500px; }
+
+    .foredrag-body p {
+      padding: 0 0.5rem 1.2rem;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .kontakt-section { background: var(--warm); padding: 3rem 1.5rem; }
+    .kontakt-inner { max-width: 520px; margin: 0 auto; }
+    .kontakt-section .section-title { margin-bottom: 0.5rem; }
+    .kontakt-section .section-subtitle { margin-bottom: 1.5rem; }
+    .kontakt-form { display: flex; flex-direction: column; gap: 1rem; }
+
+    .form-field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-field input, .form-field textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: white;
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+
+    .form-field input:focus, .form-field textarea:focus { outline: none; border-color: var(--accent); }
+    .form-field textarea { resize: vertical; min-height: 100px; }
+
+    .submit-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .submit-btn:hover { background: #263a50; }
+    .form-note { text-align: center; font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; }
+    .form-success { display: none; text-align: center; padding: 2rem 0; }
+    .form-success h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .form-success p { color: var(--muted); font-size: 0.95rem; }
+
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    @media (min-width: 600px) {
+      header { padding: 4rem 2rem 3rem; }
+      header h1 { font-size: 3rem; }
+      .logo-img { width: 140px; }
+      section { padding: 4rem 2rem; }
+      .foredrag-header h3 { font-size: 1.15rem; }
+    }
+  </style>
 </head>
 <body>
 <header>
-    <h1>Historiske Timer</h1>
-    <p>Foredrag der vækker minder</p>
+  <img src="logo.png" alt="Historiske Timer" class="logo-img">
+  <h1>Historiske Timer</h1>
+  <p>Foredrag der vækker minder</p>
 </header>
-<main>
-    <section>
-        <h2>Hvad vi tilbyder</h2>
-        <p>Historiske Timer leverer levende foredrag baseret på reminiscens-terapi til plejehjem, aktivitetscentre og kirker i hele Danmark. Vores historikere tager udgangspunkt i de begivenheder og hverdagsliv som deltagerne selv husker — og skaber en fælles oplevelse der styrker hukommelse, samtale og fællesskab.</p>
-        <p>Foredragene er udviklet i samarbejde med fagfolk og er velegnede til ældre med og uden demens.</p>
-    </section>
-    <section>
-        <div class="tal">
-            <div class="tal-item"><span class="nummer">70+</span><span class="label">afholdte foredrag</span></div>
-            <div class="tal-item"><span class="nummer">21</span><span class="label">kommuner</span></div>
-            <div class="tal-item"><span class="nummer">Hele DK</span><span class="label">vi kommer til jer</span></div>
-        </div>
-    </section>
-    <section>
-        <h2>Vores foredrag</h2>
-        <div class="tilbud">
-            <h3>Enkelt foredrag</h3>
-            <p>Et foredrag på ca. 1 time, tilpasset jeres beboere og lokale historie. Alt praktisk er inkluderet — I skal bare stille lokalet til rådighed.</p>
-            <p class="pris">3.900 – 5.000 kr. inkl. alt</p>
-            <ul>
-                <li>Historiker med erfaring i reminiscens-terapi</li>
-                <li>Tilpasset til stedets beboergruppe</li>
-                <li>Transport og materialer inkluderet</li>
-                <li>Varighed ca. 1 time</li>
-            </ul>
-        </div>
-        <div class="tilbud">
-            <h3>Årsaftale — 4 foredrag</h3>
-            <p>Sæt historiske foredrag fast i årshjulet. Fire foredrag fordelt over året med skiftende emner.</p>
-            <p class="pris">15.600 kr. / år</p>
-            <ul>
-                <li>4 foredrag fordelt over året</li>
-                <li>Nye emner hver gang</li>
-                <li>Fast kontaktperson</li>
-                <li>Fleksibel planlægning</li>
-            </ul>
-        </div>
-    </section>
-    <section>
-        <h2>Mulighed for gratis foredrag</h2>
-        <p>Mange af vores foredrag finansieres via kommunale kulturmidler og sundhedspuljer. Det betyder at jeres plejehjem eller aktivitetscenter kan få foredrag helt uden omkostning. Vi hjælper med hele processen — fra ansøgning til afvikling.</p>
-        <p>Kontakt os, så undersøger vi mulighederne for jeres kommune.</p>
-    </section>
-    <section>
-        <h2>Om os</h2>
-        <p>Historiske Timer ApS leverer historiske foredrag i hele Danmark. Vi arbejder med uddannede historikere der har specialiseret sig i at formidle fortiden på en måde der aktiverer minder og skaber nærvær — særligt for ældre.</p>
-        <p>Vores foredrag er registreret som officielt gruppetilbud på Ældre Sagens nationale frivilligportal og afholdes i samarbejde med foreningen Historiske Venner.</p>
-    </section>
-    <section>
-        <div class="cta">
-            <h2>Book et foredrag</h2>
-            <p>Ring eller skriv — vi vender tilbage samme dag.</p>
-            <a href="tel:+4520893329">Ring: 20 89 33 29</a>
-            <a href="mailto:info@historisketimer.dk">Skriv til os</a>
-        </div>
-    </section>
-</main>
+<section>
+  <h2 class="section-title">Vores foredrag</h2>
+  <p class="section-subtitle">Klik for at læse mere om hvert emne</p>
+  <div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>1930'erne</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Byder blandt andet på morgengymnastik instrueret af Kaptajn Jespersen, optagelser fra årtiets skoleliv med slåskamp og leg i skolegården, billeder og lyd fra arbejderfamiliernes hyggelige kolonihaver samt fodboldspil på en feriekoloni.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>1940'erne</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Der vises blandt andet klip fra uddeling af de første rationeringskort, indbydende og detaljerede middagsplaner fra ugebladet Hjemmet samt lyd og billeder fra Rådhuspladsen på befrielsesdagen den 4. maj 1945.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>1950'erne</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Kold Krig, amerikanisering og kønskamp er på programmet. Under foredraget skal der twistes og smages på den eksotiske Yankiebar. Desuden er der fokus på Daisy som symbol på kvindernes nye rolle i samfundet.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>1960'erne</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Masseproduktion, (over)forbrug, kønskamp og revselsesretten illustreres i lyd og billeder. Der gives gode opdragelsestips i klip fra filmen Min Søsters Børn, og afslutningsvis quizzes der i tidens vilde toner.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>1970'erne</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Foredraget sætter fokus på oliekriser, ligeløn og Danmarks indtræden i det europæiske fællesskab. Der vises historiske klip fra åbningen af Christiania og billeder fra hverdagen i et kollektiv og et parcelhus.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Arbejderbørn</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Foredraget handler om børns opvækst og vilkår i Danmark fra slutningen af 1800-tallet til nu. Børnelivet udfoldes via levende materiale fra og om fri leg i baggården, sort skole og farligt fabriksarbejde.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Danmark – besat og befriet</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Foredraget gennemgår de vigtigste begivenheder fra besættelsesårene, og der vises film, billeder og lyd fra modstandskampen og hverdagen under krigen.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Kvindekamp</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Kvindernes kamp belyses i fortid og nutid. Nøgleordene er rødstrømper, valgret og opvask. Blandt andet gennemgås badetøjets og kampdagens udvikling og betydning.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Margrethe og monarkiet</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Med foredraget kommer vi nærmere et af verdens ældste og mest populære kongehuse: det danske. Der sættes fokus på Ingrids kamp for Margrethes vej til tronen.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Jul gennem tiden</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Foredraget belyser højtdens udvikling fra vikingernes jól til nutidens forbrugsfest – herunder julestuer, træet, pynten og årstidens aktiviteter.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Tradition og overtro</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Danmarkshistorien rummer tro på både gode og onde overnaturlige væsner. Foredraget handler blandt andet om skadevoldende trolddom og kongelig heksejagt.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Takt og tone</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Foredraget gennemgår udviklingen af korrekt social opførsel – fra de brutale vikingers gæstfrihed til nutidens regler for såkaldt "skærmtid".</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Dansk kogekunst</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Dansk madhistorie har rødder i landets kolde og fugtige klima, men vores madkultur er gradvist blevet forandret af globalisering og teknologi.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Typisk Dansk</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>Foredraget definerer det typisk danske ved gennemgang af historiske begivenheder og komponenter, herunder det traumatiske og definerende nederlag i 1864.</p></div></div>
+    <div class="foredrag-item"><div class="foredrag-header" onclick="toggle(this)"><h3>Fra havn til hovedstad</h3><span class="foredrag-toggle">+</span></div><div class="foredrag-body"><p>En fortælling om, hvordan København har udviklet sig gennem brande, bombardementer og Fingerplanen.</p></div></div>
+  </div>
+</section>
+<section class="kontakt-section">
+  <div class="kontakt-inner">
+    <h2 class="section-title">Kontakt os</h2>
+    <p class="section-subtitle">Udfyld formularen, så vender vi tilbage hurtigst muligt</p>
+    <form id="contactForm" class="kontakt-form" action="https://formspree.io/f/xplaceholder" method="POST">
+      <div class="form-field"><label for="name">Navn</label><input type="text" id="name" name="name" required></div>
+      <div class="form-field"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone" required></div>
+      <div class="form-field"><label for="email">E-mail</label><input type="email" id="email" name="email" required></div>
+      <div class="form-field"><label for="message">Besked (valgfrit)</label><textarea id="message" name="message" rows="4"></textarea></div>
+      <button type="submit" class="submit-btn">Send henvendelse</button>
+      <p class="form-note">Vi kontakter dig inden for 1 hverdag</p>
+    </form>
+    <div id="formSuccess" class="form-success"><h3>Tak for din henvendelse</h3><p>Vi vender tilbage hurtigst muligt.</p></div>
+  </div>
+</section>
 <footer>
-    <p>Historiske Timer ApS · CVR 43691341</p>
-    <p>I samarbejde med <a href="mailto:bestyrelsen@historiskevenner.dk">Historiske Venner</a></p>
+  <p>Historiske Timer ApS · CVR 43691341</p>
+  <p><a href="tel:+4520893329">20 89 33 29</a> · <a href="mailto:info@historisketimer.dk">info@historisketimer.dk</a></p>
 </footer>
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.foredrag-item.open').forEach(el => el.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const data = new FormData(form);
+  fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+    .then(r => { if (r.ok) { form.style.display='none'; document.getElementById('formSuccess').style.display='block'; } })
+    .catch(() => { form.style.display='none'; document.getElementById('formSuccess').style.display='block'; });
+});
+</script>
 </body>
-</html>
+         </html>
